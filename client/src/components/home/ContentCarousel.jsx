@@ -10,18 +10,22 @@ import "swiper/css/navigation";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
 const ContentCarousel = () => {
-  // ✅ ใช้รูปภาพที่กำหนดเอง
-  const [images] = useState([
-    "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2023/06/Product/hyperx-cloud-iii-gaming-headset-black-red-front-left-view.jpg",
-    "https://your-image-url-2.jpg",
-    "https://your-image-url-3.jpg",
-    "https://your-image-url-4.jpg",
-    "https://your-image-url-5.jpg"
+  const [mainImages] = useState([
+    "https://image.benq.com/is/image/benqco/zowie_iem_katowice_1920x530_desktop?$ResponsivePreset$",
+    "https://rbtechngames.com/wp-content/uploads/2023/12/HyperX-BANNER-1040-x-500-px.png"
+  ]);
+
+  const [thumbnailImages] = useState([
+    "https://upload.wikimedia.org/wikipedia/commons/a/a9/Logitech_logo.png",
+    "https://1000logos.net/wp-content/uploads/2019/09/Razer-logo.png",
+    "https://www.highsense-gaming.com/wp-content/uploads/2024/04/Zowie-3.png.webp",
+    "https://logos-world.net/wp-content/uploads/2023/05/HyperX-Logo.png",
+    "https://cwsmgmt.corsair.com/press/CORSAIRLogo2020_stack_K.png"
   ]);
 
   return (
     <div>
-      {/* สไลด์หลัก */}
+      {/* Swiper ด้านบน (รูปใหญ่) */}
       <Swiper
         pagination={true}
         modules={[Pagination, Autoplay]}
@@ -29,16 +33,20 @@ const ContentCarousel = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        className="mySwiper h-80 object-cover rounded-md mb-4"
+        className="mySwiper w-full h-[500px] rounded-md mb-4"
       >
-        {images.map((url, i) => (
+        {mainImages.map((url, i) => (
           <SwiperSlide key={i}>
-            <img src={url} className="w-full h-full object-cover rounded-md" alt={`Slide ${i + 1}`} />
+            <img
+              src={url}
+              className="w-full h-full object-contain rounded-md"
+              alt={`Main Slide ${i + 1}`}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* สไลด์แบบ Thumbnail */}
+      {/* Swiper ด้านล่าง (Thumbnail) */}
       <Swiper
         slidesPerView={5}
         spaceBetween={10}
@@ -49,11 +57,15 @@ const ContentCarousel = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        className="mySwiper object-cover rounded-md"
+        className="mySwiper w-full h-[100px] rounded-md"
       >
-        {images.map((url, i) => (
+        {thumbnailImages.map((url, i) => (
           <SwiperSlide key={i}>
-            <img src={url} className="rounded-md w-full h-full object-cover" alt={`Thumbnail ${i + 1}`} />
+            <img
+              src={url}
+              className="w-full h-full object-contain rounded-md"
+              alt={`Thumbnail ${i + 1}`}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
