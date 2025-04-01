@@ -49,7 +49,7 @@ const SummaryCard = () => {
   };
   const hdlGoToPayment = () => {
     if (!addressSaved) {
-      return toast.warning("กรุณากรอกทีอยู่ก่อนจ้า");
+      return toast.warning("กรุณากรอกทีอยู่ก่อน");
     }
     navigate("/user/payment");
   };
