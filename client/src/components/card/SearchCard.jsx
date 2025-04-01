@@ -82,7 +82,7 @@ const SearchCard = () => {
       <input
         onChange={(e) => setText(e.target.value)}
         type="text"
-        placeholder="ค้นหาสินค้า...."
+        placeholder="Search for products...."
         className="border rounded-md w-full mb-4 px-2"
       />
       <hr />
