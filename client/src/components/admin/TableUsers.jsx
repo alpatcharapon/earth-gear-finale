@@ -60,9 +60,9 @@ const TableUsers = () => {
             <th>ลำดับ</th>
             <th>Email</th>
             {/* <th>วันที่แก้ไขล่าสุด</th> */}
-            <th>สิทธิ์</th>
-            <th>สถานะ</th>
-            <th>จัดการ</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Manage</th>
           </tr>
         </thead>
 
