@@ -77,7 +77,7 @@ const SearchCard = () => {
 
   return (
     <div>
-      <h1 className="text-xl font-bold mb-4">ค้นหาสินค้า</h1>
+      <h1 className="text-xl font-bold mb-4">Serch</h1>
       {/* Search by Text */}
       <input
         onChange={(e) => setText(e.target.value)}
@@ -88,7 +88,7 @@ const SearchCard = () => {
       <hr />
       {/* Search by Category */}
       <div>
-        <h1>หมวดหมู่สินค้า</h1>
+        <h1>Product Category</h1>
         <div>
           {categories.map((item, index) => (
             <div key={index} className="flex gap-2">
@@ -101,7 +101,7 @@ const SearchCard = () => {
       <hr />
       {/* Search by Price */}
       <div>
-        <h1>ค้นหาราคา</h1>
+        <h1>Price Length</h1>
         <div>
           <div className="flex justify-between">
             <span>Min : {numberFormat(price[0])}</span>
